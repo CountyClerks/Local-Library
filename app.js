@@ -40,7 +40,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(compression())
-app.use(express.static(path.join(__dirnamne, "public")))
+app.use(express.static(path.join(__dirname, "public")))
 app.use(helmet.contentSecurityPolicy({directives:{ "script-src": ["self", "code.jquery.com", "cdn.jsdelivr.net"]}}))
 
 app.use(limiter)
