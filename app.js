@@ -43,12 +43,12 @@ app.use(compression())
 app.use(express.static(path.join(__dirname, "public")))
 app.use(helmet.contentSecurityPolicy({directives:{ "script-src": ["self", "code.jquery.com", "cdn.jsdelivr.net"]}}))
 
-app.use(limiter)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/wiki', wiki)
 app.use('/catalog', catalogRouter)
+app.use(limiter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
